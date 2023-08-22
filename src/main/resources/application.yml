@@ -1,0 +1,37 @@
+# Spring Boot Configuration
+
+# Database Configuration
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:2525/kiosBanking
+    username: postgres
+    password: stayPeace1@
+    driverClassName: org.postgresql.Driver
+
+  # JPA Configuration
+  jpa:
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  # SQL Initialization Configuration
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
+
+
+# MyBatis Configuration
+mybatis:
+  mapper-locations: classpath*:/mapper/**/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
